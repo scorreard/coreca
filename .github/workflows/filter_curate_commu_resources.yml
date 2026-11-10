@@ -27,7 +27,7 @@ jobs:
         id: prepare
         run: |
           # List all directories in communities/ and format as a JSON array
-          communities=$(ls -d communities/*/ | xargs -n1 basename | jq -R -s -c 'split("\n")[:-1]')
+          communities=$(ls -d communities/*/ | xargs -n1 basename | grep -vx all | jq -R -s -c 'split("\n")[:-1]')
           echo "communities=$communities" >> $GITHUB_OUTPUT
   filter-and-curate-workflows:
     needs: set-matrix
