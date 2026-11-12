@@ -168,13 +168,15 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           #pattern: workflows
-          # merge-multiple: true
+          merge-multiple: true
+          name: filtered-curated-workflows
           path: communities/${{ matrix.community }}/workflowhub/
       - name: Download rsec tools
         uses: actions/download-artifact@v6
         with:
           #pattern: rsec
-          # merge-multiple: true
+          merge-multiple: true
+          name: filtered-rsec-tools
           path: communities/${{ matrix.community }}/rsec/
       - name: Download bioconda recipes
         uses: actions/download-artifact@v6
