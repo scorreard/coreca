@@ -179,7 +179,7 @@ jobs:
       - name: Download bioconda recipes
         uses: actions/download-artifact@v6
         with:
-          pattern: bioconda
+          # pattern: bioconda
           merge-multiple: true
           path: communities/${{ matrix.community }}/bioconda/
       - name: Create Pull Request
