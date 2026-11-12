@@ -180,7 +180,7 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           # pattern: bioconda
-          # merge-multiple: true
+          merge-multiple: true
           name: filtered-curated-bioconda-recipes
           path: communities/${{ matrix.community }}/bioconda/
       - name: Create Pull Request
