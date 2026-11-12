@@ -146,10 +146,14 @@ jobs:
   merge-resources:
     runs-on: ubuntu-latest
     needs: 
+      - set-matrix
       - filter-and-curate-workflows
       - filter-rsec-tools
       - filter-and-curate-bioconda-recipes
     name: Merge resources
+    strategy:
+      matrix:
+        community: ${{ fromJson(needs.set-matrix.outputs.communities) }}
     steps:
       - name: Checkout main
         uses: actions/checkout@v5
