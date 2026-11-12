@@ -192,4 +192,4 @@ jobs:
           branch: ${{ matrix.community }}-resource-update
           delete-branch: true
           add-paths: |
-            communities/
+            communities/${{ matrix.community }}/
